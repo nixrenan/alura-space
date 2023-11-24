@@ -4,7 +4,7 @@
             <section class="conteudo">
                 <section class="banner">
                     <img class="banner__imagem" src="{% static '/assets/imagens/Banner(2).png' %}" alt="banner Alura Space">
-                    <h1 class="banner__titulo">A galeria mais completa de fotos do espaço!</h1>
+                    <h1 class="banner__titulo"> A galeria mais completa de fotos do espaço!</h1>
                 </section>
                 <section class="tags">
                     <p class="tags__titulo">Busque por tags:</p>
@@ -23,11 +23,11 @@
                             {% for fotografia in cards %}
                             <li class="card">
                                 <a href="{% url 'imagem' fotografia.id %}">
-                                    {% if fotografia.foto == '' or fotografia.foto == null %}
-                                    <img class="card__imagem" src="{% static '/assets/imagens/galeria/localhost-file-not-found.jpg'%}" alt="foto">
-                                    {% else %}
+                                {% if fotografia.foto == "" or fotografia.foto == null %}
+                                    <img class="card__imagem" src="{% static '/assets/imagens/galeria/not-found.png'%}" alt="foto">
+                                {% else %}
                                     <img class="card__imagem" src="{{ fotografia.foto.url }}" alt="foto">
-                                    {% endif %}
+                                {% endif %}
                                 </a>
                                 <span class="card__tag">Estrelas</span>
                                 <div class="card__info">
